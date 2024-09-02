@@ -1,0 +1,51 @@
+---
+ ## Cas etranger sans enfants 
+
+  Ce cas permet de tester :
+  - [Param. appel] Mois et année du QF recherché 
+  - [Param. appel] Lieu de naissance hors France
+  - [Param. appel] Sexe masculin
+  - [Param. appel] Deux prénoms
+  - [Réponse] Tableau d'informations car couple
+  - [Réponse] Tableau d'informations car deux enfants
+  - [Réponse] Régime MSA
+  - [Réponse] Quotient familial 
+params:  
+  nomNaissance: FAKIR
+  prenoms[]:
+  - EYMEN
+  - MOHAMED
+  anneeDateDeNaissance: 1992
+  moisDateDeNaissance: 11
+  codeInseeLieuDeNaissance: '08480'
+  codePaysLieuDeNaissance: '99350'
+  sexe: M
+status: 200
+payload: |-
+  {
+    "regime": "CNAF",
+    "allocataires": [
+      {
+        "nomNaissance": "FAKIR",
+        "nomUsage": null,
+        "prenoms": "EYMEN MOHAMED",
+        "anneeDateDeNaissance": "1992",
+        "moisDateDeNaissance": "11",
+        "jourDateDeNaissance": "14",
+        "sexe": "F"
+      }
+    ],
+    "enfants": [],
+    "adresse": {
+      "identite": "Monsieur FAKOR EYMEN MOHAMED",
+      "complementInformation": null,
+      "complementInformationGeographique": null,
+      "numeroLibelleVoie": "19 RUE ARISTIDE BRIAND",
+      "lieuDit": null,
+      "codePostalVille": "92330 SCEAUX",
+      "pays": "FRANCE"
+    },
+    "quotientFamilial": 4270,
+    "annee": 2023,
+    "mois": 6
+  }

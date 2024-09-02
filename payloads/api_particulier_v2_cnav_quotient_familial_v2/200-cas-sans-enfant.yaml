@@ -1,0 +1,56 @@
+
+---
+  ## Cas avec un enfant 
+
+  Ce cas permet de tester :
+  - [Param. appel] Mois et année du QF recherché 
+  - [Param. appel] Lieu de naissance en France
+  - [Param. appel] Sexe feminin 
+  - [Réponse] Tableau d'informations car couple
+  - [Réponse] Tableau d'informations car deux enfants
+  - [Réponse] Régime MSA
+  - [Réponse] Quotient familial 
+ 
+params:
+  nomNaissance: LEFEBVRE
+  prenoms[]:
+  - ALEXIS
+  anneeDateDeNaissance: 1982
+  moisDateDeNaissance: 12
+  jourDateDeNaissance: 27
+ 
+  codePaysLieuDeNaissance: '99100'
+  sexe: F
+  nomCommuneNaissance: Villers-Semeuse
+  codeInseeDepartementNaissance: '92'
+  annee: example
+  mois: example
+status: 200
+payload: |-
+  {
+      "regime": "CNAF",
+    "allocataires": [
+        {
+            "nomNaissance": "LEFEBVRE",
+            "nomUsage": null,
+            "prenoms": "ALEXIS GÉRÔME JEAN-PHILIPPE",
+            "anneeDateDeNaissance": "1982",
+            "moisDateDeNaissance": "12",
+            "jourDateDeNaissance": "27",
+            "sexe": "F"
+        }
+    ],
+    "enfants": [],
+    "adresse": {
+        "identite": "Monsieur LEFEBVRE ALEXIS GÉRÔME JEAN-PHILIPPE",
+        "complementInformation": null,
+        "complementInformationGeographique": null,
+        "numeroLibelleVoie": "1 RUE MONTORGUEIL",
+        "lieuDit": null,
+        "codePostalVille": "75002 PARIS",
+        "pays": "FRANCE"
+    },
+    "quotientFamilial": 2550,
+    "annee": 2023,
+    "mois": 6
+  }

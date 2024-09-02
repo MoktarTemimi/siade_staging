@@ -1,0 +1,84 @@
+
+---
+  ## Cas avec enfant 
+
+  Ce cas permet de tester :
+  - [Param. appel] Mois et année du QF recherché 
+  - [Param. appel] Lieu de naissance en France
+  - [Param. appel] Sexe feminin
+  - [Param. appel] Deux prénoms
+  - [Réponse] Tableau d'informations car couple
+  - [Réponse] Tableau d'informations car deux enfants
+  - [Réponse] Régime MSA
+  - [Réponse] Quotient familial 
+params:
+  nomUsage: example
+  nomNaissance: ROUX
+  prenoms[]:
+  - JEANNE
+  - STEPHANIE
+  anneeDateDeNaissance: 1987
+  moisDateDeNaissance: 6  
+  nomCommuneNaissance: Villers-Semeuse
+  codeInseeDepartementNaissance: '92'
+  codePaysLieuDeNaissance: '99100'
+  sexe: F  
+  annee: 2023
+  mois: 5
+status: 200
+payload: |-
+  {
+   "regime": "MSA",
+    "allocataires": [
+        {
+            "nomNaissance": "ROUX",
+            "nomUsage": null,
+            "prenoms": "JEANNE STEPHANIE",
+            "anneeDateDeNaissance": "1987",
+            "moisDateDeNaissance": "06",
+            "jourDateDeNaissance": "27",
+            "sexe": "F"
+        },
+        {
+            "nomNaissance": "ROUX",
+            "nomUsage": null,
+            "prenoms": "LOIC NATHAN",
+            "anneeDateDeNaissance": "1979",
+            "moisDateDeNaissance": "05",
+            "jourDateDeNaissance": "19",
+            "sexe": "M"
+        }
+    ],
+    "enfants": [
+        {
+            "nomNaissance": "ROUX",
+            "nomUsage": null,
+            "prenoms": "ALEXIS VINCENT",
+            "anneeDateDeNaissance": "2006",
+            "moisDateDeNaissance": "04",
+            "jourDateDeNaissance": "20",
+            "sexe": "M"
+        },
+        {
+            "nomNaissance": "ROUX",
+            "nomUsage": null,
+            "prenoms": "FLEUR EDITH",
+            "anneeDateDeNaissance": "2004",
+            "moisDateDeNaissance": "04",
+            "jourDateDeNaissance": "20",
+            "sexe": "M"
+        }
+    ],
+    "adresse": {
+        "identite": "Madame ROUX JEANNE",
+        "complementInformation": null,
+        "complementInformationGeographique": null,
+        "numeroLibelleVoie": "1 RUE MONTORGUEIL",
+        "lieuDit": null,
+        "codePostalVille": "75002 PARIS",
+        "pays": "FRANCE"
+    },
+    "quotientFamilial": 150,
+    "annee": 2023,
+    "mois": 5
+  }
