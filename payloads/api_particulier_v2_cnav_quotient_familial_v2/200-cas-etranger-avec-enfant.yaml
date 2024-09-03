@@ -1,5 +1,6 @@
 
 ---
+description: |-
  ## Cas etranger avec enfants 
 
   Ce cas permet de tester :
@@ -12,15 +13,14 @@
   - [Réponse] Régime MSA
   - [Réponse] Quotient familial 
 params:  
-  nomNaissance: FAKIR
+  nomNaissance: 'FAKIR'
   prenoms[]:
-  - EYMEN
-  - MOHAMED
+  - 'EYMEN'
+  - 'MOHAMED'
   anneeDateDeNaissance: 1992
   moisDateDeNaissance: 11
-  codeInseeLieuDeNaissance: '08480'
   codePaysLieuDeNaissance: '99350'
-  sexe: M
+  sexe: 'M'
 status: 200
 payload: |-
   {

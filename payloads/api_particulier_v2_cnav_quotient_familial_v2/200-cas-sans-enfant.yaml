@@ -1,5 +1,6 @@
 
 ---
+description: |-
   ## Cas avec un enfant 
 
   Ce cas permet de tester :
@@ -12,17 +13,16 @@
   - [Réponse] Quotient familial 
  
 params:
-  nomNaissance: LEFEBVRE
+  nomNaissance: 'LEFEBVRE'
   prenoms[]:
-  - ALEXIS
+  - 'ALEXIS'
   anneeDateDeNaissance: 1982
   moisDateDeNaissance: 12
-  jourDateDeNaissance: 27
- 
+  jourDateDeNaissance: 27 
   codePaysLieuDeNaissance: '99100'
-  sexe: F
-  nomCommuneNaissance: Villers-Semeuse
-  codeInseeDepartementNaissance: '92'
+  sexe: 'F'
+  nomCommuneNaissance: 'Villers-Semeuse'
+  codeInseeDepartementNaissance: '08'
   annee: example
   mois: example
 status: 200

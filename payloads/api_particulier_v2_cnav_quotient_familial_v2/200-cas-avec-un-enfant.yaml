@@ -1,5 +1,6 @@
 
 ---
+description: |-
   ## Cas avec enfant 
 
   Ce cas permet de tester :
@@ -11,18 +12,17 @@
   - [Réponse] Tableau d'informations car deux enfants
   - [Réponse] Régime MSA
   - [Réponse] Quotient familial 
-params:
-  nomUsage: example
-  nomNaissance: ROUX
+params:  
+  nomNaissance: 'ROUX'
   prenoms[]:
-  - JEANNE
-  - STEPHANIE
+  - 'JEANNE'
+  - 'STEPHANIE'
   anneeDateDeNaissance: 1987
   moisDateDeNaissance: 6  
-  nomCommuneNaissance: Villers-Semeuse
-  codeInseeDepartementNaissance: '92'
+  nomCommuneNaissance: 'Villers-Semeuse'
+  codeInseeDepartementNaissance: '08'
   codePaysLieuDeNaissance: '99100'
-  sexe: F  
+  sexe: 'F'
   annee: 2023
   mois: 5
 status: 200
