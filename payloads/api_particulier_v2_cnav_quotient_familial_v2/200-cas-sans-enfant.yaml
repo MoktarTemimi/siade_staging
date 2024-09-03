@@ -23,8 +23,8 @@ params:
   sexe: 'F'
   nomCommuneNaissance: 'Villers-Semeuse'
   codeInseeDepartementNaissance: '08'
-  annee: example
-  mois: example
+  annee: 2023
+  mois: 6
 status: 200
 payload: |-
   {
