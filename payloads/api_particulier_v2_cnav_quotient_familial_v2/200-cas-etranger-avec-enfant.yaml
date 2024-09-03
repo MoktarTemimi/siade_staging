@@ -1,0 +1,71 @@
+
+---
+description: |-
+ ## Cas etranger avec enfants 
+
+  Ce cas permet de tester :
+  - [Param. appel] Mois et année du QF recherché 
+  - [Param. appel] Lieu de naissance hors France
+  - [Param. appel] Sexe masculin
+  - [Param. appel] Deux prénoms
+  - [Réponse] Tableau d'informations car couple
+  - [Réponse] Tableau d'informations car deux enfants
+  - [Réponse] Régime MSA
+  - [Réponse] Quotient familial 
+params:  
+  nomNaissance: 'Toumi'
+  prenoms[]:
+  - 'EYMEN'
+  - 'MOHAMED'
+  anneeDateDeNaissance: 1990
+  moisDateDeNaissance: 12
+  codePaysLieuDeNaissance: '99350'
+  sexe: 'M'
+status: 200
+payload: |-
+  {
+    "regime": "CNAF",
+    "allocataires": [
+      {
+        "nomNaissance": "Toumi",
+        "nomUsage": null,
+        "prenoms": "EYMEN MOHAMED",
+        "anneeDateDeNaissance": "1990",
+        "moisDateDeNaissance": "12",
+        "jourDateDeNaissance": "14",
+        "sexe": "F"
+      }
+    ],
+    "enfants": [
+        {
+            "nomNaissance": "Toumi",
+            "nomUsage": null,
+            "prenoms": "ALI",
+            "anneeDateDeNaissance": "2006",
+            "moisDateDeNaissance": "04",
+            "jourDateDeNaissance": "20",
+            "sexe": "M"
+        },
+        {
+            "nomNaissance": "Toumi",
+            "nomUsage": null,
+            "prenoms": "MOURAD",
+            "anneeDateDeNaissance": "2004",
+            "moisDateDeNaissance": "04",
+            "jourDateDeNaissance": "20",
+            "sexe": "M"
+        }
+    ],
+    "adresse": {
+      "identite": "Monsieur TOUMI EYMEN MOHAMED",
+      "complementInformation": null,
+      "complementInformationGeographique": null,
+      "numeroLibelleVoie": "19 RUE ARISTIDE BRIAND",
+      "lieuDit": null,
+      "codePostalVille": "92330 SCEAUX",
+      "pays": "FRANCE"
+    },
+    "quotientFamilial": 4270,
+    "annee": 2023,
+    "mois": 6
+  }
