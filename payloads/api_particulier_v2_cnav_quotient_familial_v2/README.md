@@ -114,6 +114,86 @@ Ce cas permet de tester :
 
   </p>
   </details>
+* [200-identite-cas-etranger-qf_424.yaml](200-identite-cas-etranger-qf_424.yaml)
+
+  Status `200`
+
+  ## IDENTITÉ CAS ETRANGER - avec QF de 424
+
+Ce cas est le cas personne étrangère de l'ensemble des cas de test d'identité/limite.
+Il a pour but de décrire une personne fictive avec l'ensemble de ses paramètres
+et la réponse lorsque celui ci est trouvé.
+
+  <details><summary>Paramètres</summary>
+  <p>
+
+  ```json
+  {
+    "codePaysLieuDeNaissance": "99351",
+    "sexe": "M",
+    "nomNaissange": "TEMIMI",
+    "prenoms": [
+      "AZIZ",
+      "MOHAMED"
+    ],
+    "anneeDateDeNaissance": 1992,
+    "moisDateDeNaissance": 6,
+    "jourDateDeNaissance": 16
+  }
+  ```
+
+  </p>
+  </details>
+
+  <details><summary>Réponse API</summary>
+  <p>
+
+  ```json
+  {
+    "regime": "CNAF",
+    "allocataires": [
+      {
+        "nomNaissance": "TEMIMI",
+        "nomUsage": null,
+        "prenoms": "AZIZ MOHAMED",
+        "anneeDateDeNaissance": "1992",
+        "moisDateDeNaissance": "06",
+        "jourDateDeNaissance": "16",
+        "sexe": "M"
+      }
+    ],
+    "enfants": [
+  
+    ],
+    "adresse": {
+      "identite": "Monsieur TEMIMI MOHAMED AZIZ",
+      "complementInformation": null,
+      "complementInformationGeographique": null,
+      "numeroLibelleVoie": "19 RUE EL NACER KODIA",
+      "lieuDit": null,
+      "codePostalVille": "7000 BIZERTE",
+      "pays": "TUNIS"
+    },
+    "quotientFamilial": 424,
+    "annee": 2025,
+    "mois": 2
+  }
+  ```
+
+  </p>
+  </details>
+
+  <details><summary>Commande cURL</summary>
+  <p>
+
+  ```bash
+  curl -H "X-Api-Key: $token" \
+    -G -d 'codePaysLieuDeNaissance=99351' -d 'sexe=M' -d 'nomNaissange=TEMIMI' -d 'prenoms[]=AZIZ' -d 'prenoms[]=MOHAMED' -d 'anneeDateDeNaissance=1992' -d 'moisDateDeNaissance=6' -d 'jourDateDeNaissance=16' \
+    --url "https://staging.particulier.api.gouv.fr/api/v2/composition-familiale-v2"
+  ```
+
+  </p>
+  </details>
 * [200-identite-cas-etranger.yaml](200-identite-cas-etranger.yaml)
 
   Status `200`
@@ -705,90 +785,6 @@ Ce cas permet de tester :
   ```bash
   curl -H "X-Api-Key: $token" \
     -G -d 'codeInseeLieuDeNaissance=08480' -d 'codePaysLieuDeNaissance=99100' -d 'sexe=F' -d 'nomNaissance=BERNARD' -d 'prenoms[]=ELODIE' -d 'anneeDateDeNaissance=1990' -d 'moisDateDeNaissance=3' \
-    --url "https://staging.particulier.api.gouv.fr/api/v2/composition-familiale-v2"
-  ```
-
-  </p>
-  </details>
-* [200-seul-sans_enfant-qf_846.yaml](200-seul-sans_enfant-qf_846.yaml)
-
-  Status `200`
-
-  ## seul - sans enfant - QF CAF de 846
-
-Ce cas permet de tester : 
-- [Param. appel] Lieu de naissance en France
-- [Param. appel] Sexe feminin
-- [Param. appel] Deux prénoms
-- [Réponse] Un seul allocataire
-- [Réponse] Absence d’enfants
-- [Réponse] Quotient familial de 846  
-
-  <details><summary>Paramètres</summary>
-  <p>
-
-  ```json
-  {
-    "codeInseeLieuDeNaissance": "75056",
-    "codePaysLieuDeNaissance": "99100",
-    "sexe": "M",
-    "nomNaissance": "LEFEBVRE",
-    "prenoms": [
-      "NICOLAS",
-      "ANTOINE"
-    ],
-    "anneeDateDeNaissance": 1992,
-    "moisDateDeNaissance": 4
-  }
-  ```
-
-  </p>
-  </details>
-
-  <details><summary>Réponse API</summary>
-  <p>
-
-  ```json
-  {
-    "regime": "CAF",
-    "allocataires": [
-      {
-        "nomNaissance": "LEFEBVRE",
-        "nomUsage": null,
-        "prenoms": "NICOLAS ANTOINE",
-        "anneeDateDeNaissance": "1992",
-        "moisDateDeNaissance": "04",
-        "jourDateDeNaissance": "10",
-        "sexe": "M"
-      }
-    ],
-    "enfants": [
-  
-    ],
-    "adresse": {
-      "identite": "Monsieur LEFEBVRE NICOLAS",
-      "complementInformation": null,
-      "complementInformationGeographique": null,
-      "numeroLibelleVoie": "15 BOULEVARD HAUSSMANN",
-      "lieuDit": null,
-      "codePostalVille": "75008 PARIS",
-      "pays": "FRANCE"
-    },
-    "quotientFamilial": 846,
-    "annee": 2024,
-    "mois": 12
-  }
-  ```
-
-  </p>
-  </details>
-
-  <details><summary>Commande cURL</summary>
-  <p>
-
-  ```bash
-  curl -H "X-Api-Key: $token" \
-    -G -d 'codeInseeLieuDeNaissance=75056' -d 'codePaysLieuDeNaissance=99100' -d 'sexe=M' -d 'nomNaissance=LEFEBVRE' -d 'prenoms[]=NICOLAS' -d 'prenoms[]=ANTOINE' -d 'anneeDateDeNaissance=1992' -d 'moisDateDeNaissance=4' \
     --url "https://staging.particulier.api.gouv.fr/api/v2/composition-familiale-v2"
   ```
 

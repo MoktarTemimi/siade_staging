@@ -65,6 +65,37 @@ Ce cas permet de tester :
   ""annee"": 2023,
   ""mois"": 5
 }"
+,"## IDENTITÉ CAS ETRANGER - avec QF de 424
+
+Ce cas est le cas personne étrangère de l'ensemble des cas de test d'identité/limite.
+Il a pour but de décrire une personne fictive avec l'ensemble de ses paramètres
+et la réponse lorsque celui ci est trouvé.","{""codePaysLieuDeNaissance"":""99351"",""sexe"":""M"",""nomNaissange"":""TEMIMI"",""prenoms"":[""AZIZ"",""MOHAMED""],""anneeDateDeNaissance"":1992,""moisDateDeNaissance"":6,""jourDateDeNaissance"":16}",200,"{
+  ""regime"": ""CNAF"",
+  ""allocataires"": [
+    {
+      ""nomNaissance"": ""TEMIMI"",
+      ""nomUsage"": null,
+      ""prenoms"": ""AZIZ MOHAMED"",
+      ""anneeDateDeNaissance"": ""1992"",
+      ""moisDateDeNaissance"": ""06"",
+      ""jourDateDeNaissance"": ""16"",
+      ""sexe"": ""M""
+    }
+  ],
+  ""enfants"": [],
+  ""adresse"": {
+    ""identite"": ""Monsieur TEMIMI MOHAMED AZIZ"",
+    ""complementInformation"": null,
+    ""complementInformationGeographique"": null,
+    ""numeroLibelleVoie"": ""19 RUE EL NACER KODIA"",
+    ""lieuDit"": null,
+    ""codePostalVille"": ""7000 BIZERTE"",
+    ""pays"": ""TUNIS""
+  },
+  ""quotientFamilial"": 424,
+  ""annee"": 2025,
+  ""mois"": 2
+}"
 ,"## IDENTITÉ CAS ETRANGER
 
 Ce cas est le cas personne étrangère de l'ensemble des cas de test d'identité/limite.
@@ -314,41 +345,6 @@ Ce cas permet de tester :
   ""quotientFamilial"": 650,
   ""annee"": 2023,
   ""mois"": 6
-}"
-,"## seul - sans enfant - QF CAF de 846
-
-Ce cas permet de tester : 
-- [Param. appel] Lieu de naissance en France
-- [Param. appel] Sexe feminin
-- [Param. appel] Deux prénoms
-- [Réponse] Un seul allocataire
-- [Réponse] Absence d’enfants
-- [Réponse] Quotient familial de 846  ","{""codeInseeLieuDeNaissance"":""75056"",""codePaysLieuDeNaissance"":""99100"",""sexe"":""M"",""nomNaissance"":""LEFEBVRE"",""prenoms"":[""NICOLAS"",""ANTOINE""],""anneeDateDeNaissance"":1992,""moisDateDeNaissance"":4}",200,"{
-  ""regime"": ""CAF"",
-  ""allocataires"": [
-    {
-      ""nomNaissance"": ""LEFEBVRE"",
-      ""nomUsage"": null,
-      ""prenoms"": ""NICOLAS ANTOINE"",
-      ""anneeDateDeNaissance"": ""1992"",
-      ""moisDateDeNaissance"": ""04"",
-      ""jourDateDeNaissance"": ""10"",
-      ""sexe"": ""M""
-    }
-  ],
-  ""enfants"": [],
-  ""adresse"": {
-    ""identite"": ""Monsieur LEFEBVRE NICOLAS"",
-    ""complementInformation"": null,
-    ""complementInformationGeographique"": null,
-    ""numeroLibelleVoie"": ""15 BOULEVARD HAUSSMANN"",
-    ""lieuDit"": null,
-    ""codePostalVille"": ""75008 PARIS"",
-    ""pays"": ""FRANCE""
-  },
-  ""quotientFamilial"": 846,
-  ""annee"": 2024,
-  ""mois"": 12
 }"
 ,"## Allocataire seul - masculin - QF CAF de 2550 du mois en cours
 
